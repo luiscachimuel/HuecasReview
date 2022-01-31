@@ -22,7 +22,7 @@ class OneNewsFragment : Fragment() {
 
         binding.listParentLayout.setOnClickListener() {
             val news = NoticiasController().getOneNews()
-            binding.txtAutor.text = news.author
+            //binding.txtAutor.text = news.author
             binding.txtDesc.text = news.desc
             binding.txtTitulo.text = news.title
 

@@ -1,11 +1,11 @@
 package com.example.adoptame.controladores
 
-import com.example.adoptame.entidades.News
+import com.example.adoptame.entidades.Reviews
 import com.example.adoptame.logica.NoticiasBL
 
 class NoticiasController {
 
-    fun getOneNews(): News {
+    fun getOneNews(): Reviews {
         return NoticiasBL().getOneNews()
     }
 

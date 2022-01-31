@@ -6,11 +6,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.adoptame.R
 import com.example.adoptame.databinding.ItemNewsListBinding
-import com.example.adoptame.entidades.News
+import com.example.adoptame.entidades.Reviews
 import com.squareup.picasso.Picasso
 
 
-class NewsAdapter(val newsItemsList: List<News>) : RecyclerView.Adapter<NewsViewHolder>() {
+class NewsAdapter(val newsItemsList: List<Reviews>) : RecyclerView.Adapter<NewsViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
         var layoutInflater = LayoutInflater.from(parent.context)
@@ -30,7 +30,7 @@ class NewsViewHolder(newsView: View) : RecyclerView.ViewHolder(newsView) {
 
     val binding = ItemNewsListBinding.bind(newsView)
 
-    fun render(item : News) {
+    fun render(item : Reviews) {
         binding.txtTitulo.text = item.title
         binding.txtDescripcion.text = item.desc
         Picasso.get().load(item.img).into(binding.imgNews1)

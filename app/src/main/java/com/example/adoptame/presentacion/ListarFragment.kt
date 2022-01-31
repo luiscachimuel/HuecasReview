@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.adoptame.controladores.adapters.NewsAdapter
 import com.example.adoptame.databinding.FragmentListarBinding
-import com.example.adoptame.entidades.News
+import com.example.adoptame.entidades.Reviews
 import com.example.adoptame.logica.NoticiasBL
 import com.squareup.picasso.Picasso
 
