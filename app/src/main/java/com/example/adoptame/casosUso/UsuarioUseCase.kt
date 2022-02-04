@@ -5,10 +5,9 @@ import com.example.adoptame.entidades.Usuario
 class UsuarioUseCase {
 
     private val usuariosDb = listOf<Usuario>(
-        Usuario("EDISON", "mendez"),
-        Usuario("GUILLERMO", "lazo"),
-        Usuario("LUIS", "miguel"),
-        Usuario("JACK", "black")
+        Usuario("LUIS", "123456"),
+        Usuario("MARTIN", "123456"),
+        Usuario("ADMIN", "admin"),
     )
 
     fun getUserNameAndPass(name: String, pass: String): Usuario {
