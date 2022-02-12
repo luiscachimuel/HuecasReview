@@ -9,7 +9,7 @@ import com.example.adoptame.databinding.ItemNewsListBinding
 import com.example.adoptame.database.entidades.Reviews
 import com.squareup.picasso.Picasso
 
-class NewsAdapter(val listNews: List<Reviews>, val onClickItemSelected: (Reviews) -> Unit) :
+class ReviewsAdapter(val listNews: List<Reviews>, val onClickItemSelected: (Reviews) -> Unit) :
     RecyclerView.Adapter<NewsViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {

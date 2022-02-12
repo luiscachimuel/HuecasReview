@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.adoptame.controladores.adapters.NewsAdapter
+import com.example.adoptame.controladores.adapters.ReviewsAdapter
 import com.example.adoptame.databinding.FragmentListarBinding
 import com.example.adoptame.database.entidades.Reviews
 import com.example.adoptame.logica.ReviewsBL
@@ -48,11 +48,11 @@ class ListarFragment : Fragment() {
     private fun loadListNews(newsEntities: List<Reviews>) {
         binding.listRecyclerView.layoutManager =
             LinearLayoutManager(binding.listRecyclerView.context)
-        binding.listRecyclerView.adapter = NewsAdapter(newsEntities) { getNewsItem(it) }
+        binding.listRecyclerView.adapter = ReviewsAdapter(newsEntities) { getNewsItem(it) }
     }
 
     private fun getNewsItem(newsEntity: Reviews) {
-        var i = Intent(activity, OneNewsFragment::class.java)
+        var i = Intent(activity, ItemActivity::class.java)
         val jsonString = Json.encodeToString(newsEntity)
         i.putExtra("noticia", jsonString)
         startActivity(i)

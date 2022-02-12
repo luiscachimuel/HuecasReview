@@ -55,5 +55,11 @@
         <item name="colorSurface">@color/m3_sys_color_light_surface</item>
         <item name="colorOnSurfaceVariant">@color/LoginForgot</item>
     </style>
+    <style name="Theme.Adoptame.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Theme.Adoptame.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.Adoptame.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 </resources>

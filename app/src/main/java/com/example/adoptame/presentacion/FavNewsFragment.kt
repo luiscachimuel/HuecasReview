@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.adoptame.controladores.adapters.NewsAdapter
+import com.example.adoptame.controladores.adapters.ReviewsAdapter
 import com.example.adoptame.database.entidades.Reviews
 import com.example.adoptame.databinding.FragmentFavNewsBinding
 import com.example.adoptame.logica.ReviewsBL
@@ -42,7 +42,7 @@ class FavNewsFragment : Fragment() {
                ReviewsBL().getFavoritesNews()
             }
             binding.listRecyclerViewFav.adapter =
-                NewsAdapter(items) { getNewsItem(it) }
+                ReviewsAdapter(items) { getNewsItem(it) }
             binding.listRecyclerViewFav.layoutManager =
                 LinearLayoutManager(binding.listRecyclerViewFav.context)
             binding.progressBarFav.visibility = View.INVISIBLE
@@ -50,7 +50,7 @@ class FavNewsFragment : Fragment() {
     }
 
     private fun getNewsItem(newsEntity: Reviews) {
-        var i = Intent(activity, OneNewsFragment::class.java)
+        var i = Intent(activity, ItemActivity::class.java)
         val jsonString = Json.encodeToString(newsEntity)
         i.putExtra("noticia", jsonString)
         startActivity(i)

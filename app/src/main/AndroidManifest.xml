@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.adoptame">
+    package="com.example.adoptame" >
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".util.HuecasReview"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="HuecasReview"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Adoptame">
+        android:theme="@style/Theme.Adoptame" >
         <activity
-            android:name=".presentacion.OneNewsFragment"
+            android:name=".presentacion.ItemActivity"
             android:exported="false" />
         <activity
             android:name=".presentacion.PrincipalActivity"
             android:exported="false" />
         <activity
             android:name=".presentacion.LoginActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
