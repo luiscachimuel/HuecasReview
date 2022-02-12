@@ -22,6 +22,12 @@ class PrincipalActivity : AppCompatActivity() {
 
         binding.bottomNavigation.setOnItemSelectedListener { item ->
             when (item.itemId) {
+                R.id.itListar -> {
+                    binding.textView.text = getString(R.string.Inicio)
+                    loadFragment(ListarFragment())
+                    lstFragments.add(R.id.itListar)
+                    true
+                }
                 R.id.itCarrito -> {
                     binding.textView.text = getString(R.string.Favoritos)
                     loadFragment(FavNewsFragment())
@@ -30,12 +36,6 @@ class PrincipalActivity : AppCompatActivity() {
                 }
                 R.id.itComprar -> {
                     lstFragments.add(R.id.itComprar)
-                    true
-                }
-                R.id.itListar -> {
-                    binding.textView.text = getString(R.string.Inicio)
-                    loadFragment(ListarFragment())
-                    lstFragments.add(R.id.itListar)
                     true
                 }
                 R.id.itPerfil -> {

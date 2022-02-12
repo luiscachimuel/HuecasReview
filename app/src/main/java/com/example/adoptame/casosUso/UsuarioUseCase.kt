@@ -1,6 +1,6 @@
 package com.example.adoptame.casosUso
 
-import com.example.adoptame.entidades.Usuario
+import com.example.adoptame.database.entidades.Usuario
 
 class UsuarioUseCase {
 
