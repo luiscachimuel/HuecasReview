@@ -22,6 +22,13 @@
         <item name="android:textColor">@color/LoginText</item>
     </style>
 
+    <style name="textAppearanceTitle" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">25sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="fontFamily">@font/days_one</item>
+        <item name="android:textColor">@color/LoginBackground</item>
+    </style>
+
     <style name="LoginBoton">
         <item name="android:textSize">16sp</item>
         <item name="android:padding">10dp</item>
@@ -55,11 +62,12 @@
         <item name="colorSurface">@color/m3_sys_color_light_surface</item>
         <item name="colorOnSurfaceVariant">@color/LoginForgot</item>
     </style>
-    <style name="Theme.Adoptame.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
-    <style name="Theme.Adoptame.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-    <style name="Theme.Adoptame.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="TabLayout" parent="">
+        <item name="tabBackground">@android:color/transparent</item>
+        <item name="colorSurface">@android:color/transparent</item>
+        <item name="colorOnSurface">@color/LoginForgot</item>
+        <item name="colorPrimary">@android:color/holo_orange_dark</item>
+        <item name="tabRippleColor">@color/teal_200</item>
+    </style>
 </resources>

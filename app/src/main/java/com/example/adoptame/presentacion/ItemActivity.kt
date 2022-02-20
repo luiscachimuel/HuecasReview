@@ -4,10 +4,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.lifecycleScope
 import com.example.adoptame.R
-import com.example.adoptame.controladores.ReviewController
-import com.example.adoptame.database.entidades.Reviews
+import com.example.adoptame.controladores.ReviewsController
 import com.example.adoptame.databinding.ActivityItemBinding
-import com.example.adoptame.logica.ReviewsBL
+import com.example.adoptame.database.entidades.ReviewsEntity
+import com.example.adoptame.logica.RevewsBL
 import com.squareup.picasso.Picasso
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -16,6 +16,7 @@ import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 
 class ItemActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityItemBinding
 
     private var fav: Boolean = false
@@ -25,9 +26,9 @@ class ItemActivity : AppCompatActivity() {
         binding = ActivityItemBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        var n: Reviews? = null
+        var n: ReviewsEntity? = null
         intent.extras?.let {
-            n = Json.decodeFromString<Reviews>(it.getString("noticia").toString())
+            n = Json.decodeFromString<ReviewsEntity>(it.getString("noticia").toString())
         }
         if (n != null) {
             loadNews(n!!)
@@ -39,31 +40,31 @@ class ItemActivity : AppCompatActivity() {
     }
 
 
-    private fun loadNews(newsEntity: Reviews) {
-        binding.txtTitulo.text = newsEntity.title
-        binding.txtAutor.text = newsEntity.subTitle
-        binding.txtDesc.text = newsEntity.desc
-        Picasso.get().load(newsEntity.img).into(binding.imgNews)
+    private fun loadNews(reviewsEntity: ReviewsEntity) {
+        binding.txtTitulo.text = reviewsEntity.author
+        binding.txtAutor.text = reviewsEntity.title
+        binding.txtDesc.text = reviewsEntity.desc
+        Picasso.get().load(reviewsEntity.img).into(binding.imgNews)
 
         lifecycleScope.launch(Dispatchers.Main) {
-            fav = withContext(Dispatchers.IO) { ReviewsBL().checkIsSaved(newsEntity.id) }
+            fav = withContext(Dispatchers.IO) { RevewsBL().checkIsSaved(reviewsEntity.id) }
             if (fav) {
                 binding.floatingActionButtonItem.setImageResource(R.drawable.ic_favorite_24)
             }
         }
     }
 
-    private fun saveFavNews(news: Reviews?) {
-        if (news != null) {
+    private fun saveFavNews(reviews: ReviewsEntity?) {
+        if (reviews != null) {
             if (!fav) {
                 lifecycleScope.launch {
-                   ReviewController().saveFavNews(news)
+                    ReviewsController().saveFavNews(reviews)
                     binding.floatingActionButtonItem.setImageResource(R.drawable.ic_favorite_24)
                 }
             } else {
                 lifecycleScope.launch {
-                    ReviewController().deleteFavNews(news)
-                    binding.floatingActionButtonItem.setImageResource(R.drawable.ic_baseline_favorite_border_24)
+                    ReviewsController().deleteFavNews(reviews)
+                    binding.floatingActionButtonItem.setImageResource(R.drawable.ic_favorite_border_12)
                 }
             }
         }
