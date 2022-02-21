@@ -45,7 +45,7 @@
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:layout_gravity="bottom|right"
-                android:layout_marginTop="160dp"
+                android:layout_marginTop="145dp"
                 android:layout_marginEnd="16dp"
                 android:backgroundTint="@color/LoginBackground"
                 android:elevation="4dp"
