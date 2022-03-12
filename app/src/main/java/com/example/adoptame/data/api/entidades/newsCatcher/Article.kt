@@ -13,6 +13,7 @@ data class Article(
     val is_opinion: Boolean,
     val language: String,
     val link: String,
+    val rating: Double,
     val media: String,
     val published_date: String,
     val published_date_precision: String,
@@ -24,4 +25,4 @@ data class Article(
     val twitter_account: Any
 )
 
-fun Article.toNewsEntity() = ReviewsEntity(0, author, title, summary, media)
+fun Article.toNewsEntity() = ReviewsEntity(0, author, title, summary, rating, media)

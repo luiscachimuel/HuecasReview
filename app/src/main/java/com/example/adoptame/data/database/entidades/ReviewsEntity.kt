@@ -12,6 +12,7 @@ data class ReviewsEntity(
     val author: String?,
     val title: String?,
     val desc: String?,
+    val rating: Double,
     var img: String?
 )
  {

@@ -10,7 +10,8 @@ data class Article(
     val source: Source,
     val title: String,
     val url: String,
+    val rating: Double,
     val urlToImage: String
 )
 
-fun Article.toNewsEntity() = ReviewsEntity(0, author, title, description, urlToImage)
+fun Article.toNewsEntity() = ReviewsEntity(0, author, title, description, rating, urlToImage)

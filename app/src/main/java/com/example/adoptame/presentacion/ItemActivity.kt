@@ -44,6 +44,7 @@ class ItemActivity : AppCompatActivity() {
         binding.txtTitulo.text = reviewsEntity.author
         binding.txtAutor.text = reviewsEntity.title
         binding.txtDesc.text = reviewsEntity.desc
+        binding.ratingBar.rating = reviewsEntity.rating.toFloat()
         Picasso.get().load(reviewsEntity.img).into(binding.imgNews)
 
         lifecycleScope.launch(Dispatchers.Main) {
