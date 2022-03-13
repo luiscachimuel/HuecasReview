@@ -1,5 +1,8 @@
 package com.example.adoptame.casosUso
 
+import com.example.adoptame.data.api.RetrofitAPI
+import com.example.adoptame.data.api.entidades.newsApi.toReviewEntity
+import com.example.adoptame.data.api.service.RestaurantsService
 import com.example.adoptame.database.entidades.ReviewsEntity
 import com.example.adoptame.utils.Adoptame
 
@@ -57,39 +60,20 @@ class ReviewsUseCase {
 
     )
 
-    suspend fun getAllNewsApi(
+    suspend fun getAllRestaurantsApi(
     ): List<ReviewsEntity> {
 
-        /*var resp: List<NewsEntity> = ArrayList<NewsEntity>()
+        var resp: List<ReviewsEntity> = ArrayList<ReviewsEntity>()
 
-        val service = RetrofitAPI.getNewsApi().create(NewsService::class.java)
-        val call = service.getAllNewsByCategoryPage(category, page, "us")
+        val service = RetrofitAPI.getRestaurantsApi().create(RestaurantsService::class.java)
+        val call = service.getAllRestaurants()
         resp = if (call.isSuccessful) {
-            return call.body()!!.articles.map {
-                it.toNewsEntity()
+            return call.body()!!.restaurants.map {
+                it.toReviewEntity()
             }
-        } else (ArrayList<NewsEntity>())
-        return resp*/
-        return newsList
-    }
-
-
-    suspend fun getAllNewsCatchApi(
-
-    ): List<ReviewsEntity> {
-        /*var resp: List<NewsEntity> = ArrayList<NewsEntity>()
-        val service = RetrofitAPI.getNewsCatcher().create(NewsService::class.java)
-        val s = "search?q=$query&page=$page"
-        println(s)
-        val call = service.getAllCatchNewsCriterioPage(s)
-        println(call.code())
-        resp = if (call.isSuccessful) {
-            return call.body()!!.articles.map {
-                it.toNewsEntity()
-            }
-        } else (ArrayList<NewsEntity>())
-        return resp*/
-        return newsList
+        } else (ArrayList<ReviewsEntity>())
+        return resp
+        //return newsList
     }
 
     suspend fun getFavoritesNews(): List<ReviewsEntity> {

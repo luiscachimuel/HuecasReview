@@ -6,11 +6,7 @@ import com.example.adoptame.database.entidades.ReviewsEntity
 class RevewsBL() {
 
     suspend fun getNewsList(category: String, page: Int): List<ReviewsEntity> {
-        return ReviewsUseCase().getAllNewsApi()
-    }
-
-    suspend fun getNewsCatchList(query: String, page: Int): List<ReviewsEntity> {
-        return ReviewsUseCase().getAllNewsCatchApi()
+        return ReviewsUseCase().getAllRestaurantsApi()
     }
 
     suspend fun checkIsSaved(id: Int): Boolean {

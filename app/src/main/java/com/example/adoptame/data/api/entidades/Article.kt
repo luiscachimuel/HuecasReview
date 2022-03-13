@@ -2,16 +2,14 @@ package com.example.adoptame.data.api.entidades
 
 import com.example.adoptame.database.entidades.ReviewsEntity
 
-data class Article(
-    val author: String,
-    val content: String,
-    val description: String,
-    val publishedAt: String,
-    val source: Source,
-    val title: String,
-    val url: String,
-    val rating: Double,
-    val urlToImage: String
+data class Restaurant(
+    val id: Int,
+    val Nombre: String,
+    val Categoria: String,
+    val Direccion: String,
+    val Review: String,
+    val Rating: Double,
+    val Imagen: String
 )
 
-fun Article.toNewsEntity() = ReviewsEntity(0, author, title, description, rating, urlToImage)
+fun Restaurant.toReviewEntity() = ReviewsEntity(id, Nombre, Categoria, Review, Rating, Imagen)

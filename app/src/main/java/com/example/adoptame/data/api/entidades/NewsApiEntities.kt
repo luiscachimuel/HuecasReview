@@ -1,7 +1,7 @@
 package com.example.adoptame.data.api.entidades
 
-data class NewsApiEntities(
-    val articles: List<Article>,
-    val status: String,
-    val totalResults: Int
+import com.example.adoptame.data.api.entidades.newsApi.Restaurant
+
+data class RestaurantsApiEntity(
+    val restaurants: List<Restaurant>
 )

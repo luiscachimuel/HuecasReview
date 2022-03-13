@@ -6,13 +6,9 @@ import com.example.adoptame.utils.EnumNews
 
 class ReviewsController {
 
-    suspend fun getNews(category: String, page: Int, apiType: EnumNews.APITypes): List<ReviewsEntity> {
-        return when (apiType) {
-            EnumNews.APITypes.NewsApi ->
-                RevewsBL().getNewsList(category.toString(), page)
-            EnumNews.APITypes.NewsCatcherApi ->
-                RevewsBL().getNewsCatchList(category.toString(), page)
-        }
+    suspend fun getNews(category: String, page: Int): List<ReviewsEntity> {
+        return RevewsBL().getNewsList(category.toString(), page)
+
     }
 
     suspend fun saveFavNews(reviews: ReviewsEntity) {

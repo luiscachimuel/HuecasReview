@@ -78,8 +78,7 @@ class ListarFragment : Fragment() {
             val items = withContext(Dispatchers.IO) {
                 ReviewsController().getNews(
                     category,
-                    page,
-                    EnumNews.APITypes.fromName("catcherapi")
+                    page
                 )
             }
 
