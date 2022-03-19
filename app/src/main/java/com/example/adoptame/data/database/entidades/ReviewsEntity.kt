@@ -13,7 +13,8 @@ data class ReviewsEntity(
     val title: String?,
     val desc: String?,
     val rating: Double,
-    var img: String?
+    var img: String?,
+    var coordenada: String?
 )
  {
     init {

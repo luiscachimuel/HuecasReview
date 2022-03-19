@@ -1,5 +1,7 @@
 package com.example.adoptame.presentacion
 
+import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.lifecycleScope
@@ -14,6 +16,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
+import com.example.adoptame.presentacion.MapsRestaurantsActivity
 
 class ItemActivity : AppCompatActivity() {
 
@@ -37,6 +40,22 @@ class ItemActivity : AppCompatActivity() {
         binding.floatingActionButtonItem.setOnClickListener() {
             saveFavNews(n)
         }
+
+        binding.floatingActionButtonItem2.setOnClickListener() {
+            /*mapaActivity: MapsRestaurantsActivity
+            val mapa = Intent(this, MapsRestaurantsActivity::class.java)
+            val texto = binding.txtTitulo.text
+            val coordenada1 = "-34.0,151.0"
+            mapa.putExtra("Ubicacion", coordenada1)
+            startActivity(mapa)*/
+            // Create a Uri from an intent string. Use the result to create an Intent.
+            val coordenada = binding.txtCoordenada.text.toString()
+            val gmmIntentUri = Uri.parse(coordenada)
+            val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
+            mapIntent.setPackage("com.google.android.apps.maps")
+            startActivity(mapIntent)
+
+        }
     }
 
 
@@ -45,6 +64,7 @@ class ItemActivity : AppCompatActivity() {
         binding.txtAutor.text = reviewsEntity.title
         binding.txtDesc.text = reviewsEntity.desc
         binding.ratingBar.rating = reviewsEntity.rating.toFloat()
+        binding.txtCoordenada.text = reviewsEntity.coordenada
         Picasso.get().load(reviewsEntity.img).into(binding.imgNews)
 
         lifecycleScope.launch(Dispatchers.Main) {

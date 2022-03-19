@@ -11,4 +11,5 @@
     <string name="tab_3">General</string>
     <string name="tab_4">Salud</string>
     <string name="tab_5">Ciencias</string>
+    <string name="title_activity_maps_restaurants">MapsRestaurantsActivity</string>
 </resources>

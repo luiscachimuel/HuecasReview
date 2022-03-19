@@ -11,6 +11,8 @@ class Adoptame : Application() {
     companion object {
         private var db: ReviewsDataBase? = null
         private lateinit var dbShare: SharedPreferences
+        lateinit  var appContext: Context
+
 
         fun getDatabase(): ReviewsDataBase {
             return db!!
@@ -19,6 +21,9 @@ class Adoptame : Application() {
         fun getShareDB(): SharedPreferences {
             return dbShare!!
         }
+
+
+
     }
 
     override fun onCreate() {
@@ -27,5 +32,6 @@ class Adoptame : Application() {
             .build()
 
         dbShare = applicationContext.getSharedPreferences("login_data", Context.MODE_PRIVATE)
+        Adoptame.appContext = applicationContext
     }
 }

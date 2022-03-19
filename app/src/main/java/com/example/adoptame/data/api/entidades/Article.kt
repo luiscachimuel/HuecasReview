@@ -9,7 +9,8 @@ data class Restaurant(
     val Direccion: String,
     val Review: String,
     val Rating: Double,
-    val Imagen: String
+    val Imagen: String,
+    val Coordenada: String
 )
 
-fun Restaurant.toReviewEntity() = ReviewsEntity(id, Nombre, Categoria, Review, Rating, Imagen)
+fun Restaurant.toReviewEntity() = ReviewsEntity(id, Nombre, Categoria, Review, Rating, Imagen, Coordenada)

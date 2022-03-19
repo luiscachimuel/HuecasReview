@@ -6,7 +6,7 @@ import com.example.adoptame.database.entidades.ReviewsEntity
 @Dao
 interface ReviewsDAO {
 
-    @Query("SELECT * FROM news")
+    @Query("SELECT * FROM news", )
     suspend fun getAllNews(): List<ReviewsEntity>
 
     @Query("SELECT * FROM news WHERE id = :idNews")
