@@ -25,30 +25,22 @@ class PrincipalActivity : AppCompatActivity() {
         binding.bottomNavigation.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.itListar -> {
-                    binding.textView.text = getString(R.string.ListarProductos)
+                    binding.imageView2.setImageResource(R.drawable.banner1)
                     changeFragment(R.id.itListar, ListarFragment())
                     true
                 }
                 R.id.itCarrito -> {
-                    binding.textView.text = getString(R.string.CarritoProductos)
+                    binding.imageView2.setImageResource(R.drawable.banner2)
                     changeFragment(R.id.itCarrito, FavNewsFragment())
                     true
                 }
-                R.id.itComprar -> {
-                    lstFragments.add(R.id.itComprar)
-                    true
-                }
-                R.id.itPerfil -> {
-                    lstFragments.add(R.id.itComprar)
-                    true
-                }
-                /*R.id.itComprar -> {
+                R.id.itSalir -> {
                     val intent = Intent(this, LoginActivity::class.java)
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent)
                     true
-                }*/
+                }
                 else -> false
             }
         }
@@ -110,7 +102,7 @@ class PrincipalActivity : AppCompatActivity() {
     fun getStringSharedPreference() {
         var editor = Adoptame.getShareDB()
         var txt = editor.getString("name_user", "")
-        binding.textView.text = txt.toString()
+        //binding.textView.text = txt.toString()
     }
 }
 

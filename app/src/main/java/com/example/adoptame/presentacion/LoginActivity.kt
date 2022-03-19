@@ -35,8 +35,8 @@ class LoginActivity : AppCompatActivity() {
                 binding.txtPassword.text.toString()
             )
             if (access) {
-                binding.emailField.error = getString(R.string.error)
-                binding.passwordField.error = getString(R.string.error)
+                binding.emailField.error = getString(R.string.Usuario)
+                binding.passwordField.error = getString(R.string.Contraseña)
             } else {
                 binding.emailField.error = null
                 var intent = Intent(this, PrincipalActivity::class.java)

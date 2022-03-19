@@ -10,11 +10,7 @@
         android:icon="@drawable/ic_favorite_24"
         android:title="Favoritos" />
     <item
-        android:id="@+id/itComprar"
-        android:icon="@drawable/ic_baseline_search_24"
-        android:title="Buscar" />
-    <item
-        android:id="@+id/itPerfil"
-        android:icon="@drawable/ic_baseline_account_circle_24"
-        android:title="Perfil" />
+        android:id="@+id/itSalir"
+        android:icon="@drawable/ic_exit_to_app_24"
+        android:title="Salir" />
 </menu>

@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Huecas Review</string>
-    <string name="error">Error</string>
+    <string name="Usuario">Usuario Incorrecto</string>
+    <string name="Contraseña">Password Incorrecto</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Las noticias del día</string>
     <string name="ListarProductos">Establecimientos</string>
