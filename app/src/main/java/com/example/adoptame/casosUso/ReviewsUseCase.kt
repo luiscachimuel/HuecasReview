@@ -26,7 +26,7 @@ class ReviewsUseCase {
             "Restaurante 2",
             "Comida Italiana",
             "Exclusive: Experts aim to find out whether there are hotspots around country where electronic waste is avoidedFrom fancy toys to smartphones, when technology breaks, it often seems simplest to ditch it for a new model.But now experts are hoping to challenge t…",
-            3.5,
+            4.0,
             "https://www.eluniversal.com.co/binrepository/1200x675/0c0/0d0/none/13704/EBKF/restaurante_3538118_20200825164948.jpg",
             "geo:0,0?q=-0.10704512475694013, -78.45508011232049(Inka Burguer)"
         ),
